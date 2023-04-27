@@ -1,6 +1,9 @@
-# Plan a Deployment 
-## Setting Environmental Vars 
-1) Create Env Vars via CLI
+# Plan a Deployment
+
+## Setting Environmental Vars
+
+1. Create Env Vars via CLI
+
 ```bash
 $ export TF_VAR_ssh_key_file=$(cat SSH_KEY.pub)
 $ export TF_VAR_pm_api_url=https://pve.example.com/api2/json
@@ -9,13 +12,15 @@ $ export PM_API_TOKEN_ID='TOKEN'
 $ export PM_API_TOKEN_SECRET='SECRET'
 ```
 
-2) Plan and Apply
+2. Plan and Apply
+
 ```bash
 $ terraform plan -out tfplan
 $ terraform apply 'tfplan'
 ```
 
 ## In-line Vars
+
 ```bash
 # create a terraform plan
 $ terraform plan -var='pm_api_token_id=TOKEN' \
@@ -26,7 +31,9 @@ $ terraform plan -var='pm_api_token_id=TOKEN' \
 ```
 
 ## Using a Secrets Management Tool
+
 ### Bitwarden
+
 ```bash
 
 ```
