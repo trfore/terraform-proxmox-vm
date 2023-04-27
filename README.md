@@ -1,6 +1,8 @@
-# Plan a Deployment
+# Create Proxmox VM using Terraform
 
-## Setting Environmental Vars
+## Plan a Deployment
+
+### Setting Environmental Vars
 
 1. Create Env Vars via CLI
 
@@ -19,7 +21,7 @@ $ terraform plan -out tfplan
 $ terraform apply 'tfplan'
 ```
 
-## In-line Vars
+### In-line Vars
 
 ```bash
 # create a terraform plan
