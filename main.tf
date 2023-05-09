@@ -1,4 +1,4 @@
-# simple clone of a ubuntu cloud-init template
+# simple clone of a proxmox template image (e.g. ubuntu-cloud)
 resource "proxmox_vm_qemu" "proxmox_vm" {
   for_each    = var.proxmox_vm
   name        = each.value.hostname
@@ -29,12 +29,7 @@ resource "proxmox_vm_qemu" "proxmox_vm" {
   # cloud-init settings
   ipconfig0 = "ip=${each.value.cidr},gw=${each.value.NAT_gateway_IPv4}"
 
-  # .ssh/authorized_keys
-  # sshkeys = <<EOF
-  # "${var.ssh_key_public_admin}"
-  # "${var.ssh_key_public_ansible}"
-  # EOF
-  sshkeys = file("${var.ssh_key_file}")
+  sshkeys = file("${var.ssh_key_public}")
 
   # block changing mac address on reapply
   # https://github.com/Telmate/terraform-provider-proxmox/issues/112/

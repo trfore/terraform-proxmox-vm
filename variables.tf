@@ -29,29 +29,7 @@ variable "ssh_key_file" {
   }
 }
 
-# variable "ssh_key_public_admin" {
-#   description = "Admin Public SSH Key for VM Host"
-#   default     = "~/.ssh/id_ed25519.pub"
-#   type        = string
-#   sensitive   = true
-#   validation {
-#     condition     = can(regex("(?i)PRIVATE", var.ssh_key_public_admin)) == false
-#     error_message = "ERROR Private SSH Key"
-#   }
-# }
-
-# variable "ssh_key_public_ansible" {
-#   description = "Ansible Public SSH Key for VM Host"
-#   default     = "~/.ssh/id_ed25519.pub"
-#   type        = string
-#   sensitive   = true
-#   validation {
-#     condition     = can(regex("(?i)PRIVATE", var.ssh_key_public_ansible)) == false
-#     error_message = "ERROR Private SSH Key"
-#   }
-# }
-
-variable "DNS_searchdomain" {
+variable "dns_searchdomain" {
   description = "Internal DNS Server, e.g. 'dns.example.com'"
   type        = string
   sensitive   = true
