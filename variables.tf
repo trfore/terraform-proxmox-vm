@@ -18,13 +18,13 @@ variable "pm_api_url" {
   }
 }
 
-variable "ssh_key_file" {
+variable "ssh_key_public" {
   description = "Public SSH Key for VM Host"
   default     = "~/.ssh/id_ed25519.pub"
   type        = string
   sensitive   = true
   validation {
-    condition     = can(regex("(?i)PRIVATE", var.ssh_key_file)) == false
+    condition     = can(regex("(?i)PRIVATE", var.ssh_key_public)) == false
     error_message = "ERROR Private SSH Key"
   }
 }
@@ -34,7 +34,7 @@ variable "dns_searchdomain" {
   type        = string
   sensitive   = true
   validation {
-    condition     = length(var.DNS_searchdomain) != 0
+    condition     = length(var.dns_searchdomain) != 0
     error_message = "DNS URL required"
   }
 }
