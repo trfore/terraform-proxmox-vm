@@ -39,7 +39,7 @@ variable "dns_searchdomain" {
   }
 }
 
-# Default Variables
+# default Variables
 variable "vm_user" {
   description = "default user for VMs"
   default     = "ubuntu"
@@ -52,13 +52,13 @@ variable "proxmox_vm" {
     "vm-1000" = {
       vm_id              = 0,
       hostname           = "vm-1000",
-      target_node        = "lab1",
-      img_template       = "ubuntu-cloud",
+      target_node        = "lab0",
+      img_template       = "ubuntu2004-cloud",
       vcpu               = "2",
       memory             = "4096",
-      boot_disk_size     = "10G",
-      boot_disk_iothread = 0,
-      boot_disk_ssd      = 0,
+      boot_disk_size     = "10G",    # str, required
+      boot_disk_iothread = 0,        # int, required
+      boot_disk_ssd      = 0,        # int
       boot_disk_discard  = "ignore", # "on" = ssd trim
       cidr               = "192.168.1.254/24",
       NAT_gateway_IPv4   = "192.168.1.1",
