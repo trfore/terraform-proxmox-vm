@@ -1,10 +1,12 @@
-# Sensitive Variables to Pass as Terrafrom CLI Args
+# Sensitive Variables to Pass as Terrafrom CLI Args or ENV Vars
 variable "pm_api_token_id" {
-  default = ""
+  sensitive = true
+  nullable  = false
 }
 
 variable "pm_api_token_secret" {
-  default = ""
+  sensitive = true
+  nullable  = false
 }
 
 # Sensitive Variables
