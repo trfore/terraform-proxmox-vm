@@ -1,0 +1,4 @@
+---
+repository:
+  description: Template for creating Proxmox VMs using Terraform
+  topics: terraform, proxmox, homelab
